@@ -1,27 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <p>Specialize in backend development, API design, and cloud technologies</p>
-    <p>Passionate software engineer | Java, Python, AWS, SQL, NoSQL | Problem-solver | Always learning & building innovative tech</p>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hi, I'm Chaitanya Patel, a Software Engineer.</p>
-    </header>
-    <section>
-        <h2>About Me</h2>
-        <p>I am a software engineer with 3 years of experience specializing in backend API development using Java and Python. 
-        <p>Over the years, I have gained hands-on expertise in building and maintaining scalable, efficient, and robust systems with service-oriented architecture (SOA), microservices, and distributed systems. 
-      My experience spans working on high-performance, cloud-based solutions, integrating APIs, and optimizing backend services to ensure reliability and performance.</p>
-        <p>I am particularly passionate about designing systems that solve complex problems and enhance user experience. I am excited about using my technical skills, problem-solving abilities, and collaborative mindset to solve problems for fun.</p> 
+  <!-- Header with Navigation -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact-me">Contact</a></li>
+        <li><button id="theme-toggle">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- <div id="custom-cursor"></div> -->
+    <!-- Home Section -->
+    <section id="home">
+      <div class="intro">
+        <img src="images/profile.jpg" alt="Chaitanya Patel" class="profile-image" loading="lazy">
+        <h1><span id="typed-text"></span></h1>
+        <button onclick="scrollToSection('projects')">See my work</button>
+      </div>
     </section>
-    <footer>
-        <p>Contact: <a href="mailto:your@email.com">cp2263@rit.edu</a></p>
-    </footer>
+
+    <!-- About Me Section -->
+    <section id="about">
+      <div class="headline-container">
+        <h2>About Me</h2>
+        <p class="headline">Software Engineer | Backend Developer | Cloud Enthusiast</p>
+        <p class="summary">
+          I'm a passionate software engineer with 4 years of experience in backend development and cloud technologies. 
+          I specialize in building scalable backend systems, and I thrive in collaborative environments while always learning and growing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill">
+        <p>Java</p>
+        <div class="progress" style="width: 94%;"></div>
+      </div>
+      <div class="skill">
+        <p>Python</p>
+        <div class="progress" style="width: 89%;"></div>
+      </div>
+      <div class="skill">
+        <p>SQL / NoSQL</p>
+        <div class="progress" style="width: 91%;"></div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>Food ingredient risk scanner</p>
+        <button class="view-details" onclick="openModal('modal-1')">View Details</button>
+      </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>Movie cast graph visualizer</p>
+        <button class="view-details" onclick="openModal('modal-1')">View Details</button>
+      </div>
+      <!-- Modal -->
+      <div id="modal-1" class="modal" style="display:none;">
+        <div class="modal-content">
+          <h3>Project 1 Details</h3>
+          <p>Coming soon</p>
+          <button onclick="closeModal('modal-1')">Close</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="work-experience">
+      <h2>Work Experience</h2>
+      <div class="project-card">
+        <h3>Software Engineer @ Amazon Web Services</h3>
+        <ul>
+          <li>Enhanced AWS Lake Formation with fine-grained access controls, improving data governance and security.</li>
+          <li>Implemented Hybrid Access Mode, enabling advanced permissions while ensuring IAM and Glue compatibility.</li>
+          <li>Launched the service in three new regions, reducing launch time from 12 to 5 weeks via automation.</li>
+        </ul>
+        <p>Tech: Java, Spring Boot, REST, Python, Glue, DynamoDB, CloudFormation, S3, EC2, Lambda.</p>
+      </div>
+      <div class="project-card">
+        <h3>Software Engineer @ Capgemini India Pvt. Ltd.</h3>
+        <ul>
+          <li>Designed and developed high-latency REST APIs and batch jobs for calculating mileage and CO2.</li>
+          <li>Created an efficient calculator engine that calculated the CO2 emissions of new cars, 3 highly efficient REST web services to call the calculator, a web application and multiple batch jobs.</li>
+        </ul>
+        <p>Tech: Java, Spring Boot, Spring Batch, REST, MySQL, Hibernate Angular JS, Seed Stack</p>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="project-card">
+        <h3>Master of Science in Computer Science</h3>
+        <p>Rochester Institute of Technology, 2022</p>
+      </div>
+    </section>
+
+    <!-- GitHub Stats Section -->
+    <section id="github-stats">
+      <h2>GitHub Stats</h2>
+      <img src="https://github-readme-stats.vercel.app/api?username=chaitanya343&show_icons=true&theme=dark" alt="GitHub Stats" loading="lazy">
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact-me">
+      <h2>Contact Me</h2>
+      <p>Let's connect! Reach me on my socials below or send a message:</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/cp343/" target="_blank">
+          <img src="images/linkedin.png" alt="LinkedIn Profile" loading="lazy">
+        </a>
+        <a href="https://github.com/chaitanya343" target="_blank">
+          <img src="images/github.png" alt="GitHub Profile" loading="lazy">
+        </a>
+        <a href="mailto:cp2263@rit.edu">
+          <img src="images/email.png" alt="Email Me" loading="lazy">
+        </a>
+      </div>
+      <form id="contact-form" onsubmit="validateForm(event)">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input id="message" placeholder="Message" required></input>
+        <button type="submit">Send</button>
+        <p id="form-feedback"></p>
+      </form>
+      <a href="resume.pdf" download="Chaitanya_Patel_Resume.pdf">
+        <button>Download Resume</button>
+      </a>
+    </section>
+  </main>
+
+  <!-- Scroll Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" onclick="scrollToTop()">↑</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
